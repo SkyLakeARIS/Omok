@@ -22,4 +22,4 @@ https://docs.popekim.com/ko/coding-standards/cpp
 
 
 ****     
-![omok](https://postfiles.pstatic.net/MjAxOTEyMTBfMjU3/MDAxNTc1OTcwMzc1ODgx.yMzBLBZpb6Lkjk995boncpNHSo0tIzRKeSg8vvg0fwAg.6HMiEP0jrNj2z1jdRTodWgSDZzqmZ33RstDpnyvEJpsg.PNG.bunkete15/image.png?type=w773 "")    
+![omok](https://blogfiles.pstatic.net/MjAxOTEyMTBfMjU3/MDAxNTc1OTcwMzc1ODgx.yMzBLBZpb6Lkjk995boncpNHSo0tIzRKeSg8vvg0fwAg.6HMiEP0jrNj2z1jdRTodWgSDZzqmZ33RstDpnyvEJpsg.PNG.bunkete15/image.png "실행 ")    
