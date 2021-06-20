@@ -1,1 +1,24 @@
-# Omok
+#Omok
+
+버전이 제대로 관리되지 않아 기록이 일부 제대로 기록되지 않았습니다. (깃헙 리포지토리 개선 과정 중 정보 유실)    
+해당 프로젝트는 아래 코딩 표준을 따라 작성되었습니다.   
+
+코딩 표준 참고 문서     
+https://docs.popekim.com/ko/coding-standards/cpp      
+****    
+시작일자  19'11월경에 시작되었음.   
+완성일자  19'12.10
+수정내용    
+ 21'03.05~13
+> 개체지향방식으로 변경됨에 따라 클래스, 코드 구성 변경    
+	
+21'06.13     
+> Project 리포지토리에 종속되어 있던 하위 프로젝트들을 개별 리포지토리를 가지도록 만들었음.    
+      
+21'06'20
+> readme문서 추가에 따른 log.txt, 소스 파일에 기록되었던 개발 내용 이동.    
+
+
+
+****     
+![omok](https://blogfiles.pstatic.net/MjAxOTEyMTBfMjU3/MDAxNTc1OTcwMzc1ODgx.yMzBLBZpb6Lkjk995boncpNHSo0tIzRKeSg8vvg0fwAg.6HMiEP0jrNj2z1jdRTodWgSDZzqmZ33RstDpnyvEJpsg.PNG.bunkete15/image.png "실행 이미지")     
