@@ -26,21 +26,7 @@ public:
 
 private:
 
-    int recurUp(int x, int y, eStoneType color);
-
-    int recurDown(int x, int y, eStoneType color);
-
-    int recurLeft(int x, int y, eStoneType color);
-
-    int recurRight(int x, int y, eStoneType color);
-
-    int recurDiagonalUpLeft(int x, int y, eStoneType color);
-
-    int recurDiagonalUpRight(int x, int y, eStoneType color);
-
-    int recurDiagonalDownLeft(int x, int y, eStoneType color);
-
-    int recurDiagonalDownRight(int x, int y, eStoneType color);
+    int recurCountStone(int posX, int posY, const int x, const int y, const eStoneType color);
 
 private:
     eStoneType mBaord[BOARD_SIZE][BOARD_SIZE];

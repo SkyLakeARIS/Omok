@@ -73,81 +73,11 @@ void Board::PrintBoard()
     }
 }
 
-int Board::recurUp(int x, int y, eStoneType color)
+int Board::recurCountStone(int posX, int posY, const int x, const int y, const eStoneType color)
 {
-    if (mBaord[y][x] == color)
+    if (mBaord[posY][posX] == color)
     {
-        return recurUp(x, y - 1, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurDown(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurDown(x, y + 1, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurLeft(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurLeft(x - 1, y, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurRight(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurRight(x + 1, y, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurDiagonalUpLeft(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurDiagonalUpLeft(x - 1, y - 1, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurDiagonalUpRight(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurDiagonalUpRight(x + 1, y - 1, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurDiagonalDownRight(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurDiagonalDownRight(x + 1, y + 1, color) + 1;
-    }
-
-    return 0;
-}
-
-int Board::recurDiagonalDownLeft(int x, int y, eStoneType color)
-{
-    if (mBaord[y][x] == color)
-    {
-        return recurDiagonalDownLeft(x - 1, y + 1, color) + 1;
+        return recurCountStone(posX + x, posY + y, x, y, color) + 1;
     }
 
     return 0;
@@ -156,35 +86,19 @@ int Board::recurDiagonalDownLeft(int x, int y, eStoneType color)
 bool Board::CheckOmok(int x, int y, eStoneType color)
 {
     const int OMOK = 5;
-    //돌을 놓은 위치는 미리 카운트하고 재귀함수는 주변에 놓인 자신의 돌을 체크함.
-    int omokCount = 1;
-    //자신의 돌 사이에 둠으로써 오목이 완성되는 경우를 고려해서 두 함수의 리턴값을
-    //더한 후 조건을 체크함.
-    omokCount += (recurUp(x, y - 1, color) + recurDown(x, y + 1, color));
-    if (omokCount == OMOK)
-    {
-        return true;
-    }
 
-    omokCount = 1;
-    omokCount += (recurLeft(x - 1, y, color) + recurRight(x + 1, y, color));
-    if (omokCount == OMOK)
+    //자신의 돌 사이에 둠으로써 오목이 완성되는 경우를 고려해서 검사 방향의 반대 방향도
+    //검사하여 합산한 결과를 통해 오목 완성 여부를 검사한다.
+    //재귀함수는 자기자신(돌을 놓은 위치)를 포함하므로 1을 빼줌으로써 중복 계산을 해결한다.
+    for (int i = -1; i <= 1; i++)
     {
-        return true;
-    }
-
-    omokCount = 1;
-    omokCount += (recurDiagonalUpLeft(x - 1, y - 1, color) + recurDiagonalDownRight(x + 1, y + 1, color));
-    if (omokCount == OMOK)
-    {
-        return true;
-    }
-
-    omokCount = 1;
-    omokCount += (recurDiagonalUpRight(x + 1, y - 1, color) + recurDiagonalDownLeft(x - 1, y + 1, color));
-    if (omokCount == OMOK)
-    {
-        return true;
+        int omokCount = 0;
+        omokCount += recurCountStone(x, y, i, -1, color);
+        omokCount += recurCountStone(x, y, -i, 1, color);
+        if ((omokCount-1) == OMOK)
+        {
+            return true;
+        }
     }
 
     return false;
