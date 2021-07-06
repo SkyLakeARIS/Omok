@@ -19,6 +19,8 @@ https://docs.popekim.com/ko/coding-standards/cpp
 21'06.20
 > readme문서 추가에 따른 log.txt, 소스 파일에 기록되었던 개발 내용 이동.    
 
+21'07.06     
+> 오목을 검사하는 재귀함수 개선
 
 
 ****     
