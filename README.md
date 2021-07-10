@@ -19,7 +19,10 @@ https://docs.popekim.com/ko/coding-standards/cpp
 21'06.20
 > readme문서 추가에 따른 log.txt, 소스 파일에 기록되었던 개발 내용 이동.    
 
+21'07.06     
+> 오목을 검사하는 재귀함수 개선
 
 
 ****     
+## 실행 이미지    
 ![omok](https://blogfiles.pstatic.net/MjAxOTEyMTBfMjU3/MDAxNTc1OTcwMzc1ODgx.yMzBLBZpb6Lkjk995boncpNHSo0tIzRKeSg8vvg0fwAg.6HMiEP0jrNj2z1jdRTodWgSDZzqmZ33RstDpnyvEJpsg.PNG.bunkete15/image.png "실행 이미지")     
