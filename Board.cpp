@@ -73,11 +73,11 @@ void Board::PrintBoard()
     }
 }
 
-int Board::recurCountStone(int posX, int posY, const int x, const int y, const eStoneType color)
+int Board::recurCountStone(int currentX, int currentY, const POINT dir, const eStoneType color)
 {
-    if (mBaord[posY][posX] == color)
+    if (mBaord[currentY][currentX] == color)
     {
-        return recurCountStone(posX + x, posY + y, x, y, color) + 1;
+        return recurCountStone(currentX + dir.x, currentY + dir.y, dir, color) + 1;
     }
 
     return 0;
@@ -86,15 +86,20 @@ int Board::recurCountStone(int posX, int posY, const int x, const int y, const e
 bool Board::CheckOmok(int x, int y, eStoneType color)
 {
     const int OMOK = 5;
-
+    const POINT DIR[8] =
+    {
+        {-1, -1}, {0, -1}, {1, -1},
+        {-1, 0}, {1, 0},
+        {-1, 1}, {0, 1}, {1, 1}
+    };
     //자신의 돌 사이에 둠으로써 오목이 완성되는 경우를 고려해서 검사 방향의 반대 방향도
     //검사하여 합산한 결과를 통해 오목 완성 여부를 검사한다.
     //재귀함수는 자기자신(돌을 놓은 위치)를 포함하므로 1을 빼줌으로써 중복 계산을 해결한다.
-    for (int i = -1; i <= 1; i++)
+    for (int i = 0; i < 4; i++)
     {
         int omokCount = 0;
-        omokCount += recurCountStone(x, y, i, -1, color);
-        omokCount += recurCountStone(x, y, -i, 1, color);
+        omokCount += recurCountStone(x, y, DIR[i], color);
+        omokCount += recurCountStone(x, y, DIR[7-i], color);
         if ((omokCount-1) == OMOK)
         {
             return true;

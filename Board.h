@@ -26,7 +26,7 @@ public:
 
 private:
 
-    int recurCountStone(int posX, int posY, const int x, const int y, const eStoneType color);
+    int recurCountStone(int currentX, int currentY, const POINT dir, const eStoneType color);
 
 private:
     eStoneType mBaord[BOARD_SIZE][BOARD_SIZE];
