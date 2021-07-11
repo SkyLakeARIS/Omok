@@ -6,6 +6,9 @@
 
 코딩 표준 참고 문서     
 https://docs.popekim.com/ko/coding-standards/cpp      
+
+주요 코드에 대한 설명은 아래 링크에 설명이 되어 있습니다.     
+https://blog.naver.com/bunkete15/221733034592    
 ****    
 시작일자  19'11월경에 시작되었음.   
 완성일자  19'12.10     
@@ -28,3 +31,5 @@ https://docs.popekim.com/ko/coding-standards/cpp
 ****     
 ## 실행 이미지    
 ![omok](https://blogfiles.pstatic.net/MjAxOTEyMTBfMjU3/MDAxNTc1OTcwMzc1ODgx.yMzBLBZpb6Lkjk995boncpNHSo0tIzRKeSg8vvg0fwAg.6HMiEP0jrNj2z1jdRTodWgSDZzqmZ33RstDpnyvEJpsg.PNG.bunkete15/image.png "실행 이미지")     
+    
+![omok2](https://blogfiles.pstatic.net/MjAyMTA3MTBfMjE1/MDAxNjI1OTA3MTA3MzA3.UjcBLo7KwJHsgFp-IEvSrZF-t7eHtEQ4sMQ2NKJgAFAg.lKHkVLM8DUxO-6XDFrlp728Fpbx-N585nkdhLxneB_0g.JPEG.bunkete15/omok_result.JPG "실행 이미지")
